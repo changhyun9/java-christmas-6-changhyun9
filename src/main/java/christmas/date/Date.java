@@ -1,14 +1,16 @@
-package christmas.order;
+package christmas.date;
 
-public class OrderDate {
+public class Date {
     public static final int START_DATE = 1;
     public static final int END_DATE = 31;
-    private int day;
+    private final int date;
+    private final DayOfWeek dayOfWeek;
 
-    public OrderDate(String date) {
+    public Date(String date) {
         validateNumericType(date);
         validateRange(date);
-        this.day = Integer.parseInt(date);
+        this.date = Integer.parseInt(date);
+        dayOfWeek = setDayOfWeek(date);
     }
 
     private void validateNumericType(String date) {
@@ -24,6 +26,24 @@ public class OrderDate {
         if (parseDate < START_DATE || parseDate > END_DATE) {
             throw new IllegalArgumentException("[ERROR] Enter Range 1 ~ 31");
         }
+    }
+
+    private DayOfWeek setDayOfWeek(String date) {
+        int day = checkDayOfWeek(Integer.parseInt(date));
+        DayOfWeek[] values = DayOfWeek.values();
+        return values[day];
+    }
+
+    private int checkDayOfWeek(int date){
+        return date % 7;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
+    public DayOfWeek getDayOfWeek() {
+        return dayOfWeek;
     }
 
 }
