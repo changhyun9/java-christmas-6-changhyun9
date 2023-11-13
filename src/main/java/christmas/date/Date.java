@@ -1,4 +1,4 @@
-package christmas.domain.order;
+package christmas.order;
 
 public class OrderDate {
     public static final int START_DATE = 1;

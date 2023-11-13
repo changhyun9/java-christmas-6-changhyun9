@@ -1,4 +1,4 @@
-package christmas.domain.order;
+package christmas.order;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
@@ -18,5 +18,13 @@ public class OrderDateTest {
     void enterOnlyNumber() {
         Assertions.assertThatThrownBy(() -> new OrderDate("1일"))
                 .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("숫자로 날을 입력받으면, 요일이 저장된다")
+    @Test
+    void checkDayOfWeek() {
+        OrderDate orderDate = new OrderDate("1");
+        String dayOfWeek = orderDate.getDayOfWeek();
+        Assertions.assertThat(dayOfWeek).isEqualTo("금요일");
     }
 }
