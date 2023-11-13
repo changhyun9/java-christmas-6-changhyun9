@@ -43,4 +43,9 @@ public class OrderMenu {
     public int getQuantity() {
         return quantity;
     }
+
+    public int getPrice(){
+        int price = menuName.getPrice();
+        return price * quantity;
+    }
 }
