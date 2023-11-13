@@ -1,4 +1,4 @@
-package christmas.order;
+package christmas.date;
 
 import christmas.date.Date;
 import christmas.date.DayOfWeek;
