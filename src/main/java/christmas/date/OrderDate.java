@@ -1,12 +1,12 @@
 package christmas.date;
 
-public class Date {
+public class OrderDate {
     public static final int START_DATE = 1;
     public static final int END_DATE = 31;
     private final int date;
     private final DayOfWeek dayOfWeek;
 
-    public Date(String date) {
+    public OrderDate(String date) {
         validateNumericType(date);
         validateRange(date);
         this.date = Integer.parseInt(date);
