@@ -42,8 +42,8 @@ public class OrderDate {
         return date;
     }
 
-    public DayOfWeek getDayOfWeek() {
-        return dayOfWeek;
+    public String getDayOfWeek() {
+        return dayOfWeek.getDayOfWeek();
     }
 
 }
