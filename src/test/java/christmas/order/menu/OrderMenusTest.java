@@ -1,4 +1,4 @@
-package christmas.menu;
+package christmas.order.menu;
 
 import christmas.order.menu.OrderMenus;
 import org.assertj.core.api.Assertions;
