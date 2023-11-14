@@ -36,8 +36,8 @@ public class OrderMenu {
         }
     }
 
-    public Menu getMenuName() {
-        return menuName;
+    public String getMenuName() {
+        return menuName.getName();
     }
 
     public int getQuantity() {
@@ -47,5 +47,9 @@ public class OrderMenu {
     public int getPrice(){
         int price = menuName.getPrice();
         return price * quantity;
+    }
+
+    public String getCategory() {
+        return menuName.getCategory();
     }
 }
