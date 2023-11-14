@@ -1,4 +1,4 @@
-package christmas.menu;
+package christmas.order.menu;
 
 public class OrderMenu {
     public static final int MIN_QUANTITY = 1;

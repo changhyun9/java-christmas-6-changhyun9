@@ -1,7 +1,7 @@
 package christmas.order;
 
-import christmas.date.OrderDate;
-import christmas.menu.OrderMenus;
+import christmas.order.date.OrderDate;
+import christmas.order.menu.OrderMenus;
 
 public class Order {
     private final OrderDate orderDate;

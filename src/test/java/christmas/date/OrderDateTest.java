@@ -1,5 +1,7 @@
 package christmas.date;
 
+import christmas.order.date.DayOfWeek;
+import christmas.order.date.OrderDate;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +26,7 @@ public class OrderDateTest {
     @Test
     void checkDayOfWeek() {
         OrderDate orderDate = new OrderDate("1");
-        DayOfWeek dayOfWeek = orderDate.getDayOfWeek();
+        String dayOfWeek = orderDate.getDayOfWeek();
         Assertions.assertThat(dayOfWeek).isEqualTo(DayOfWeek.FRIDAY);
     }
 }

@@ -1,4 +1,4 @@
-package christmas.date;
+package christmas.order.date;
 
 public class OrderDate {
     public static final int START_DATE = 1;

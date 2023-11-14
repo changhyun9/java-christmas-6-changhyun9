@@ -1,4 +1,4 @@
-package christmas.date;
+package christmas.order.date;
 
 public enum DayOfWeek {
     THURSDAY("평일"),
