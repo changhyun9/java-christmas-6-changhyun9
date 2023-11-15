@@ -1,4 +1,4 @@
-package christmas.discount;
+package christmas.promotion.discount;
 
 import christmas.order.date.OrderDate;
 import christmas.order.menu.OrderMenus;
@@ -13,9 +13,12 @@ public class Discount {
 
     public Discount(OrderDate orderDate, OrderMenus orderMenus) {
         this.orderDiscountList = new OrderDiscountList();
-        discountChristmasDay(orderDate);
-        discountDateOfWeek(orderDate, orderMenus);
-        discountSpecial(orderDate);
+        int totalPrice = orderMenus.getTotalPrice();
+        if (totalPrice >= 10_000) {
+            discountChristmasDay(orderDate);
+            discountDateOfWeek(orderDate, orderMenus);
+            discountSpecial(orderDate);
+        }
     }
 
     private void addDiscountList(OrderDiscount orderDiscount) {

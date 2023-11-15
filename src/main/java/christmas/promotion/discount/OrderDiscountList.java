@@ -1,4 +1,4 @@
-package christmas.discount;
+package christmas.promotion.discount;
 
 import java.util.ArrayList;
 import java.util.List;

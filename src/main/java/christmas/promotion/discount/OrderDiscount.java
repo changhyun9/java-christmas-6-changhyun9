@@ -1,4 +1,4 @@
-package christmas.discount;
+package christmas.promotion.discount;
 
 public class OrderDiscount {
     private final DiscountList discount;
