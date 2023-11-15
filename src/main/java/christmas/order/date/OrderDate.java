@@ -7,24 +7,28 @@ public class OrderDate {
     private final DayOfWeek dayOfWeek;
 
     public OrderDate(String date) {
-        validateNumericType(date);
-        validateRange(date);
+        try {
+            validateNumericType(date);
+            validateRange(date);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
         this.date = Integer.parseInt(date);
         dayOfWeek = setDayOfWeek(date);
     }
 
     private void validateNumericType(String date) {
         try {
-            Integer.parseInt(date);
+            int parseDate = Integer.parseInt(date);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("[ERROR] Enter only numeric type");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
         }
     }
 
     private void validateRange(String date) {
         int parseDate = Integer.parseInt(date);
         if (parseDate < START_DATE || parseDate > END_DATE) {
-            throw new IllegalArgumentException("[ERROR] Enter Range 1 ~ 31");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 날짜입니다. 다시 입력해 주세요.");
         }
     }
 

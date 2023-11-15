@@ -13,6 +13,7 @@ public class OrderMenus {
         splitOrderMenu(split);
         validateTotalQuantity();
         validateOnlyDrink();
+
     }
 
     private void splitOrderMenu(String[] split) {
@@ -51,7 +52,6 @@ public class OrderMenus {
     }
 
     private void validateDuplicateOrder(OrderMenu orderMenu) {
-
         String orderMenuName = orderMenu.getMenuName();
         for (OrderMenu menu : orderMenus) {
             String menuName = menu.getMenuName();
@@ -62,14 +62,7 @@ public class OrderMenus {
     }
 
     private void validateOnlyDrink() {
-        int drinkCount=0;
-        for (OrderMenu orderMenu : orderMenus) {
-            String category = orderMenu.getCategory();
-            System.out.println(category);
-            if (category.equals("음료")) {
-                drinkCount++;
-            }
-        }
+        int drinkCount = categoryCount("음료");
         if (drinkCount == getSize()) {
             throw new IllegalArgumentException("[ERROR] Can't order only drinks");
         }
@@ -77,6 +70,29 @@ public class OrderMenus {
 
     public int getSize() {
         return orderMenus.size();
+    }
+
+    public int getDessertQuantity() {
+        return categoryCount("디저트");
+    }
+
+    public int getMainQuantity() {
+        return categoryCount("메인");
+    }
+
+    private int categoryCount(String category) {
+        int count =0;
+        for (OrderMenu orderMenu : orderMenus) {
+            String menuCategory = orderMenu.getCategory();
+            if (category.equals(menuCategory)) {
+                count += orderMenu.getQuantity();
+            }
+        }
+        return count;
+    }
+
+    public List<OrderMenu> getOrderMenus() {
+        return orderMenus;
     }
 
 }

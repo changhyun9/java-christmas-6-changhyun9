@@ -7,20 +7,19 @@ public class Order {
     private final OrderDate orderDate;
     private final OrderMenus orderMenus;
 
-    public Order(String inputOrderDate, String inputOrderMenus) {
-        this.orderDate = new OrderDate(inputOrderDate);
-        this.orderMenus = new OrderMenus(inputOrderMenus);
+    public Order(OrderDate orderDate, OrderMenus orderMenus) {
+        this.orderDate = orderDate;
+        this.orderMenus = orderMenus;
     }
 
-    public int getOrderDate() {
-        return orderDate.getDate();
+    public OrderDate getOrderDate() {
+        return orderDate;
     }
 
-    public String getOrderDateOfWeek() {
-        return orderDate.getDayOfWeek();
+    public OrderMenus getOrderMenus() {
+        return orderMenus;
     }
-
-    public int getOrderPrice() {
+    public int getOrderTotalPrice(){
         return orderMenus.getTotalPrice();
     }
 }

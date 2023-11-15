@@ -18,21 +18,21 @@ public class OrderMenu {
     private void validateInputFormat(String input) {
         boolean matches = input.matches("^[ㄱ-ㅎ가-힣]*-[0-9]*$");
         if (!matches) {
-            throw new IllegalArgumentException("[ERROR] Enter correct format (ex: 해산물파스타-2)");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
     }
 
     private void validateExist(String name) {
         boolean menu = Menu.findMenu(name);
         if(!menu){
-            throw new IllegalArgumentException("[ERROR] Enter exist menu");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
     }
 
     private void validateQuantity(String quantity){
         int menuQuantity = Integer.parseInt(quantity);
         if(menuQuantity < MIN_QUANTITY || menuQuantity > MAX_QUANTITY){
-            throw new IllegalArgumentException("[ERROR] Enter Range 1 ~ 20");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
     }
 
