@@ -1,7 +1,9 @@
-package christmas.discount;
+package christmas.promotion.discount;
 
 import christmas.order.date.OrderDate;
 import christmas.order.menu.OrderMenus;
+import christmas.promotion.discount.Discount;
+import christmas.promotion.discount.OrderDiscount;
 import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
