@@ -18,7 +18,7 @@ public class OrderDateTest {
     @DisplayName("숫자만 입력이 가능하다")
     @Test
     void enterOnlyNumber() {
-        Assertions.assertThatThrownBy(() -> new OrderDate("1일"))
+        Assertions.assertThatThrownBy(() -> new OrderDate("a"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
